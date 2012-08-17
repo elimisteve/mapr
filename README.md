@@ -1,4 +1,10 @@
-# mpr
+# mapr: map[] printer for Go/golang
+
+"Map printer?  Huh?"
+
+See the example below.
+
+## The Example Below
 
 Tired of passing the same values to `fmt.Printf` over and over again?
 
@@ -10,10 +16,12 @@ Tired of passing the same values to `fmt.Printf` over and over again?
     %v%v%v
     %v%v%v
     `
+
     fmt.Printf(permutations, 1, 2, 3, 1, 3, 2, 2, 1, 3, 2, 3, 1,
         3, 1, 2, 3, 2, 1)
 
-Feels redundant and hard to read, yes?  How about this instead?
+
+Feel redundant yet?  Hard to read, isn't it?  Try this instead:
 
     permutations := `
     %(one)v%(two)v%(three)v
@@ -30,7 +38,7 @@ Feels redundant and hard to read, yes?  How about this instead?
         "three": 3,
     }
 
-    mpr.Printf(permutations, nums)
+    mapr.Printf(permutations, nums)
 
 
 ## TODO
@@ -39,6 +47,8 @@ Feels redundant and hard to read, yes?  How about this instead?
 
 * Seriously consider making the syntax less Pythonic and more
   Go-esque (e.g., `{{name}}` instead of `%(name)s`)
+
+* Make the example more compelling
 
 
 ## Inspiration

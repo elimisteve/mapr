@@ -1,7 +1,7 @@
 // Steve Phillips / elimisteve
 // 2012.08.17
 
-package mpr
+package mapr
 
 import (
 	"fmt"
