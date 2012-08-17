@@ -51,5 +51,5 @@ func replace(format string, key string, val interface{}) string {
 	replacement := fmt.Sprintf("%v", val)
 	format = strings.Replace(format, "%("+key+")s", replacement, -1)
 	format = strings.Replace(format, "%("+key+")v", replacement, -1)
-    return format
+	return format
 }

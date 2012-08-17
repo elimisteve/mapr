@@ -43,10 +43,10 @@ Feel redundant yet?  Hard to read, isn't it?  Try this instead:
 
 ## TODO
 
-* Use reflection to support structs in addition to maps
+* Make syntax less Pythonic and more Go-esque (e.g., `{{name}}`
+  instead of `%(name)s`)
 
-* Seriously consider making the syntax less Pythonic and more
-  Go-esque (e.g., `{{name}}` instead of `%(name)s`)
+* Use reflection to support structs in addition to maps
 
 * Make the example more compelling
 
