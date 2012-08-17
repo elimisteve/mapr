@@ -16,12 +16,14 @@ Tired of passing the same values to `fmt.Printf` over and over again?
     %v%v%v
     %v%v%v
     `
+    one, two, three := 1, 2, 3
 
-    fmt.Printf(permutations, 1, 2, 3, 1, 3, 2, 2, 1, 3, 2, 3, 1,
-        3, 1, 2, 3, 2, 1)
+    fmt.Printf(permutations, one, two, three, one, three, two, two,
+        one, three, two, three, one, three, one, two, three, two, one)
 
 
-Feel redundant yet?  Hard to read, isn't it?  Try this instead:
+Feel redundant yet?  Were the variables passed in in the correct
+order?  Hard to say...  Try this instead:
 
     permutations := `
     %(one)v%(two)v%(three)v
@@ -31,13 +33,11 @@ Feel redundant yet?  Hard to read, isn't it?  Try this instead:
     %(three)v%(one)v%(two)v
     %(three)v%(two)v%(one)v
     `
-
     nums := map[string]int{
-        "one": 1,
-        "two": 2,
+        "one":   1,
+        "two":   2,
         "three": 3,
     }
-
     mapr.Printf(permutations, nums)
 
 
@@ -48,12 +48,16 @@ Feel redundant yet?  Hard to read, isn't it?  Try this instead:
 
 * Use reflection to support structs in addition to maps
 
-* Make the example more compelling
+* Make the example more compelling by making it more similar to the
+  example that actually inspired `mapr`
+
+* Add unit tests
 
 
 ## Inspiration
 
-Inspired by Python's dictionary-passing syntax and a strong desire to
-make things better.
+Inspired by Python's dictionary formatting syntax, certain experiences
+with Go + much printing values contained in maps, and a strong desire
+to make things better.
 
 --Steve Phillips / [@elimisteve](http://twitter.com/elimisteve)
