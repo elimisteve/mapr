@@ -43,6 +43,8 @@ order?  Hard to say...  Try this instead:
 
 ## TODO
 
+* Add mapr.Sprintf
+
 * Find way to create combine `mapr` with Go's HTML templates so Go web
   developers can benefit from this, too
 
