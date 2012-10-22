@@ -8,6 +8,8 @@ See the example below.
 
 Tired of passing the same values to `fmt.Printf` over and over again?
 
+    // WTF are all these %v's? Can't see the structure of the data
+
     permutations := `
     %v%v%v
     %v%v%v
@@ -18,12 +20,16 @@ Tired of passing the same values to `fmt.Printf` over and over again?
     `
     one, two, three := 1, 2, 3
 
+    // Long function call, passing in the same variables several times
+
     fmt.Printf(permutations, one, two, three, one, three, two, two,
         one, three, two, three, one, three, one, two, three, two, one)
 
 
-Feel redundant yet?  Were the variables passed in in the correct
-order?  Hard to say...  Try this instead:
+Hard to read? Feel redundant yet?  Were the variables passed in in the
+correct order?  Hard to say...  Try this instead:
+
+    // Easier to read
 
     permutations := `
     {{one}}{{two}}{{three}}
@@ -38,20 +44,22 @@ order?  Hard to say...  Try this instead:
         "two":   2,
         "three": 3,
     }
+
+    // One-line, easy-to-read function call. Much better!
+
     mapr.Printf(permutations, nums)
 
 
 ## TODO
 
-* Add mapr.Sprintf
+* Use reflection to support structs in addition to maps
 
 * Find way to create combine `mapr` with Go's HTML templates so Go web
   developers can benefit from this, too
 
-* Use reflection to support structs in addition to maps
-
 * Make the example more compelling by making it more similar to the
-  example that actually inspired `mapr`
+  example that actually inspired `mapr`, with many lines and `%s`'s
+  and `%v`'s strewn about
 
 * Add unit tests
 
@@ -60,6 +68,8 @@ order?  Hard to say...  Try this instead:
 
 * Make syntax less Pythonic and more Go-esque (e.g., `{{name}}`
   instead of `%(name)s`)
+
+* Add mapr.Sprintf
 
 
 ## Inspiration
